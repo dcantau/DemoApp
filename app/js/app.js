@@ -4,6 +4,7 @@ var eventsApp = angular.module('eventsApp', []);
 
 eventsApp.controller("EventController", function($scope) {
     $scope.sortorder = '-upVoteCount';
+    $scope.query= '';
     $scope.event = {
         name: "Angular Boot Camp",
         date: "1/1/2013",
