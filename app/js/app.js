@@ -3,6 +3,7 @@
 var eventsApp = angular.module('eventsApp', []);
 
 eventsApp.controller("EventController", function($scope) {
+    $scope.sortorder = '-upVoteCount';
     $scope.event = {
         name: "Angular Boot Camp",
         date: "1/1/2013",
@@ -20,7 +21,7 @@ eventsApp.controller("EventController", function($scope) {
                 duration: "1 hr",
                 level: "Advanced",
                 abstract: "In this session you will learn the ins and outs of directives!",
-                upVoteCount: 0,
+                upVoteCount: 2,
             },
             {
                 name: "Scopes for fun and profit",
@@ -28,7 +29,7 @@ eventsApp.controller("EventController", function($scope) {
                 duration: "30 mins",
                 level: "Introductory",
                 abstract: "This session will take a closer look at scopes. Learn what the do, how they do it, and how to get them to do it for you",
-                upVoteCount: 0,
+                upVoteCount: 3,
             },
             {
                 name: "Well Behaved Controllers",
@@ -36,7 +37,7 @@ eventsApp.controller("EventController", function($scope) {
                 duration: "2 hours",
                 level: "Intermediate",
                 abstract: "Controllers are the beginning of everything Angular does. Learn how to craft controllers that will win the respect of your friends and neighbours.",
-                upVoteCount: 0,
+                upVoteCount: 35,
             },
         ]
     };
