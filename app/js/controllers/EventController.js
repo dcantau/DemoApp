@@ -3,11 +3,14 @@
 eventsApp.controller("EventController", function($scope, $log, eventData) {
     $scope.sortorder = '-upVoteCount';
     $scope.query= '';
-    eventData.getEvent().success(function(data) {
-        $scope.event = data;
-    }).error(function(data, status, headers,config){
-        $log.warn(data, status, headers, config);
-    });
+    eventData.getEvent()
+        .$promise
+        .then(function(event) {
+            $scope.event = event;
+        })
+        .catch(function(response) {
+            console.log(response);
+        });
 
     $scope.upVoteSession = function(session) {
         session.upVoteCount++;
