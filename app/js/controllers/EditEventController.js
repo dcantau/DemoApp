@@ -1,10 +1,17 @@
 'use strict';
 
-eventsApp.controller("EditEventController", function($scope) {
+eventsApp.controller("EditEventController", function($scope, eventData) {
 
     $scope.saveEvent = function(event, NewEventForm) {
         if (NewEventForm.$valid) {
-            alert("event " + event.name + " saved!");
+            eventData.save(event)
+                .$promise
+                .then(function(response) {
+                    console.log('success', response)
+                })
+                .catch(function(response) {
+                    console.log('failure', response)
+                });
         }
     };
 
