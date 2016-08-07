@@ -1,10 +1,12 @@
 'use strict';
 
-eventsApp.controller("EventController", function($scope, eventData) {
+eventsApp.controller("EventController", function($scope, $log, eventData) {
     $scope.sortorder = '-upVoteCount';
     $scope.query= '';
-    eventData.getEvent(function(event) {
-        $scope.event = event;
+    eventData.getEvent().success(function(data) {
+        $scope.event = data;
+    }).error(function(data, status, headers,config){
+        $log.warn(data, status, headers, config);
     });
 
     $scope.upVoteSession = function(session) {
