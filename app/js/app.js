@@ -18,5 +18,10 @@ eventsApp.config(function($routeProvider){
             templateUrl: 'templates/EventDetails.html',
             controller: 'EventController'
         });
+    $routeProvider.when('/sampleDirective',
+        {
+            templateUrl: 'templates/sampleDirective.html',
+            controller: 'SampleDirectiveController'
+        });
     $routeProvider.otherwise({redirectTo: '/events'});
 });
