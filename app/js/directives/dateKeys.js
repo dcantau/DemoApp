@@ -5,7 +5,6 @@ eventsApp.directive('dateKeys', function() {
         restrict: 'A', // A Attributes
         link: function(scope, element, attr, controller) {
             element.on('keydown', function(event) {
-                console.log(event.keyCode);
                 if (isNumericKeyCode(event.keyCode) || isForwardSlashKeyCode(event.keyCode) || isNavigationKeyCode(event.keyCode)) {
                     return true;
                 }
@@ -41,11 +40,4 @@ eventsApp.directive('dateKeys', function() {
         }
     }
 
-});
-
-eventsApp.directive('mySample', function() {
-    return {
-        restrict: 'C', // C Class
-        template: "<input text='text' ng-model='sampleData'/> {{ sampleData }}<br/>"
-    };
 });
